@@ -1,4 +1,3 @@
-import { DeployButton } from "@/components/supabase/deploy-button";
 import { EnvVarWarning } from "@/components/supabase/env-var-warning";
 import { AuthButton } from "@/components/supabase/auth-button";
 import { hasEnvVars } from "@/lib/utils";
