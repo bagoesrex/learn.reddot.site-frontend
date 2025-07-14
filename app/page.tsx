@@ -1,12 +1,10 @@
-import { EnvVarWarning } from "@/components/supabase/env-var-warning";
-import { AuthButton } from "@/components/supabase/auth-button";
-import { hasEnvVars } from "@/lib/utils";
+import HeroSection from "@/components/home/hero-section";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col justify-center items-center">
-      <h2 className="font-medium text-xl mb-4">REDDOT LEARNING</h2>
-      {!hasEnvVars ? <EnvVarWarning /> : <AuthButton />}
+    <main className="flex flex-col gap-10 pb-10 text-gray-950">
+
+      <HeroSection />
     </main >
   );
 }

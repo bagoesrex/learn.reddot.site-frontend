@@ -120,3 +120,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.heading-main {
+  @apply text-4xl md:text-5xl font-extrabold leading-tight;
+}
