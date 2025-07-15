@@ -6,10 +6,10 @@ import NavbarList from "./navbar-list";
 import Link from "next/link";
 
 const navbarList: { title: string; href: string }[] = [
-    { title: "Home", href: "/" },
-    { title: "News", href: "/news" },
-    { title: "Artikel", href: "/article" },
-    { title: "About", href: "/about" },
+    { title: "Belajar", href: "/" },
+    { title: "Komunitas", href: "/news" },
+    { title: "Others", href: "/article" },
+    { title: "Tentang Kami", href: "/about" },
 ];
 
 type NavbarProps = {
@@ -63,10 +63,10 @@ Navbar.MobileMenu = function MobileMenu({ setIsOpen }: { setIsOpen: (open: boole
                 </Link>
             ))}
             <div className="flex flex-col gap-2 justify-center items-center *:w-full text-center">
-                <Link href="/signin" className="py-1.5 px-3 border border-white rounded hover:bg-white hover:text-[#D10000] transition">
+                <Link href="/auth/login" className="py-1.5 px-3 border border-white rounded hover:bg-white hover:text-[#D10000] transition">
                     Masuk
                 </Link>
-                <Link href="/signup" className="py-1.5 px-3 rounded bg-white text-[#D10000] hover:opacity-90 transition">
+                <Link href="/auth/sign-up" className="py-1.5 px-3 rounded bg-white text-[#D10000] hover:opacity-90 transition">
                     Daftar
                 </Link>
             </div>

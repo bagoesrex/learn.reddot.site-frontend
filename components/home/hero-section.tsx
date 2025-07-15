@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
-import Link from "next/link";
-import Icon from "@/public/logo-dark.svg";
+import Icon from "@/public/logo-red.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
     return (
@@ -37,14 +37,18 @@ export default function HeroSection() {
                     transition={{ duration: 1, delay: 0.4 }}
                     className="mt-6 hidden md:flex justify-center md:justify-start gap-4"
                 >
-                    <Link href="/">
-                        <Button
-                            className="bg-red-600 hover:bg-transparent border-2 border-red-600 hover:text-red-600 transition"
-                            size="lg"
-                        >
-                            Mulai Belajar Sekarang
-                        </Button>
-                    </Link>
+                    <Button
+                        onClick={() => {
+                            const section = document.getElementById("features");
+                            if (section) {
+                                section.scrollIntoView();
+                            }
+                        }}
+                        className="bg-red-600 hover:bg-transparent border-2 border-red-600 hover:text-red-600 transition"
+                        size="lg"
+                    >
+                        Mulai Belajar Sekarang
+                    </Button>
                 </motion.div>
             </div>
 
@@ -54,7 +58,7 @@ export default function HeroSection() {
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
             >
-                <div className="w-full h-auto">
+                <div className="w-full h-auto my-12">
                     <Image
                         src={Icon}
                         alt="Reddot Logo"
@@ -66,14 +70,18 @@ export default function HeroSection() {
                 </div>
 
                 <div className="mt-4 flex justify-center items-center md:hidden">
-                    <Link href="/">
-                        <Button
-                            className="mt-5 bg-red-600 hover:bg-transparent border-2 border-red-600 hover:text-red-600 transition"
-                            size="lg"
-                        >
-                            Mulai Belajar Sekarang
-                        </Button>
-                    </Link>
+                    <Button
+                        onClick={() => {
+                            const section = document.getElementById("features");
+                            if (section) {
+                                section.scrollIntoView();
+                            }
+                        }}
+                        className="mt-5 bg-red-600 hover:bg-transparent border-2 border-red-600 hover:text-red-600 transition"
+                        size="lg"
+                    >
+                        Mulai Belajar Sekarang
+                    </Button>
                 </div>
             </motion.div>
         </section>
