@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import Icon from "@/public/logo-red.svg";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function HeroSection() {
     return (
