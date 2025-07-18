@@ -1,11 +1,9 @@
-import { ForgotPasswordForm } from "@/components/supabase/forgot-password-form";
+import ForgotPasswordFormWrapper from "@/components/auth/forgot-password-form-wrapper";
 
-export default function Page() {
+export default function ForgotPasswordPage() {
   return (
-    <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
-      <div className="w-full max-w-sm">
-        <ForgotPasswordForm />
-      </div>
-    </div>
+    <main className="flex flex-col gap-10 text-gray-950">
+      <ForgotPasswordFormWrapper />
+    </main>
   );
 }
