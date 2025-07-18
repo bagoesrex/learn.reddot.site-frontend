@@ -58,10 +58,10 @@ export function SignUpForm({
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-2xl">Sign up</CardTitle>
-          <CardDescription>Create a new account</CardDescription>
+      <Card className="border-0 shadow-none">
+        <CardHeader className="text-center">
+          <CardTitle className="text-2xl">Pendaftaran Akun</CardTitle>
+          <CardDescription>Daftarkan Akunmu Sekarang</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSignUp}>
@@ -71,10 +71,11 @@ export function SignUpForm({
                 <Input
                   id="email"
                   type="email"
-                  placeholder="m@example.com"
+                  placeholder="sikucink@gmail.com"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  className="focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:border-primary/40"
                 />
               </div>
               <div className="grid gap-2">
@@ -87,6 +88,7 @@ export function SignUpForm({
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  className="focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:border-primary/40"
                 />
               </div>
               <div className="grid gap-2">
@@ -99,6 +101,7 @@ export function SignUpForm({
                   required
                   value={repeatPassword}
                   onChange={(e) => setRepeatPassword(e.target.value)}
+                  className="focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:border-primary/40"
                 />
               </div>
               {error && <p className="text-sm text-red-500">{error}</p>}
@@ -107,9 +110,9 @@ export function SignUpForm({
               </Button>
             </div>
             <div className="mt-4 text-center text-sm">
-              Already have an account?{" "}
+              Sudah punya akun?{" "}
               <Link href="/auth/login" className="underline underline-offset-4">
-                Login
+                Masuk sekarang
               </Link>
             </div>
           </form>

@@ -27,7 +27,7 @@ export default function HeroSection() {
                     transition={{ duration: 1, delay: 0.2 }}
                     className="text-md md:text-xl mt-4"
                 >
-                    Belajar tentang Artificial Intelligence tanpa pusing dengan Megumine
+                    Belajar tentang Artificial Intelligence tanpa pusing
                 </motion.p>
 
                 <motion.div
