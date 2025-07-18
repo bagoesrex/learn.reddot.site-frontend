@@ -49,11 +49,11 @@ export function LoginForm({
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-2xl">Login</CardTitle>
+      <Card className="border-0 shadow-none">
+        <CardHeader className="text-center">
+          <CardTitle className="text-2xl">Masuk Ke RedDot</CardTitle>
           <CardDescription>
-            Enter your email below to login to your account
+            Lanjutkan Belajarmu di RedDot
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -64,10 +64,11 @@ export function LoginForm({
                 <Input
                   id="email"
                   type="email"
-                  placeholder="m@example.com"
+                  placeholder="sikucink@gmail.com"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  className="focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:border-primary/40"
                 />
               </div>
               <div className="grid gap-2">
@@ -77,7 +78,7 @@ export function LoginForm({
                     href="/auth/forgot-password"
                     className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
                   >
-                    Forgot your password?
+                    Lupa password?
                   </Link>
                 </div>
                 <Input
@@ -86,6 +87,7 @@ export function LoginForm({
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  className="focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:border-primary/40"
                 />
               </div>
               {error && <p className="text-sm text-red-500">{error}</p>}
@@ -94,12 +96,12 @@ export function LoginForm({
               </Button>
             </div>
             <div className="mt-4 text-center text-sm">
-              Don&apos;t have an account?{" "}
+              Belum punya akun? Ayo{" "}
               <Link
                 href="/auth/sign-up"
                 className="underline underline-offset-4"
               >
-                Sign up
+                daftar
               </Link>
             </div>
           </form>

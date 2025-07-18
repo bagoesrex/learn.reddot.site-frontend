@@ -1,11 +1,9 @@
-import { LoginForm } from "@/components/supabase/login-form";
+import SignInFormWrapper from "@/components/auth/sign-in-form-wrapper";
 
-export default function Page() {
+export default function SignInPage() {
   return (
-    <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
-      <div className="w-full max-w-sm">
-        <LoginForm />
-      </div>
-    </div>
+    <main className="flex flex-col gap-10 text-gray-950">
+      <SignInFormWrapper />
+    </main>
   );
 }
