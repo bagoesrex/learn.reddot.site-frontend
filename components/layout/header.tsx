@@ -1,39 +1,26 @@
-"use client";
-
 import Image from "next/image";
-import Icon from "@/public/logo.svg";
-import { Navbar } from "./navbar";
-import { useState } from "react";
-import AuthButton from "../shared/auth-button";
 import Link from "next/link";
+import Icon from "@/public/logo.svg";
+import { AuthButton } from "../supabase/auth-button";
+import NavbarToggleClient from "./navbar-toggle-client";
 
-export default function Header() {
-    const [isOpen, setIsOpen] = useState(false);
-
+export default async function Header() {
     return (
         <header className="fixed top-0 z-50 w-full bg-[#D10000] backdrop-blur-md shadow-sm text-white text-sm">
             <div className="mx-auto max-w-5xl px-4 md:px-2 transition-all duration-300 flex flex-col">
                 <div className="flex items-center justify-between">
-                    <Link href={"/"}>
+                    <Link href="/">
                         <div className="relative h-14 flex justify-center items-center w-20 overflow-hidden">
                             <Image src={Icon} alt="Logo Website" priority />
                         </div>
                     </Link>
 
-                    <div className="mr-0 md:-mr-21">
-                        <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
-                    </div>
+                    <NavbarToggleClient />
 
                     <div className="hidden md:block">
                         <AuthButton />
                     </div>
                 </div>
-
-                {isOpen && (
-                    <div className="mb-2 md:hidden flex flex-col gap-3 animate-fadeDown">
-                        <Navbar.MobileMenu setIsOpen={setIsOpen} />
-                    </div>
-                )}
             </div>
         </header>
     );
