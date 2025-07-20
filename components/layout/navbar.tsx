@@ -26,7 +26,9 @@ export function Navbar({ isOpen, setIsOpen }: NavbarProps) {
                         <NavbarList key={href} href={href}>
                             <span className="flex items-center gap-1 justify-center">
                                 {title}
-                                {title === "E-Learning" && <ArrowUpRight color="white" size={14} />}
+                                {title === "E-Learning" && (
+                                    <ArrowUpRight color="white" size={14} />
+                                )}
                             </span>
                         </NavbarList>
                     ))}
@@ -46,9 +48,9 @@ export function Navbar({ isOpen, setIsOpen }: NavbarProps) {
     );
 }
 
-Navbar.MobileMenu = function MobileMenu({ setIsOpen }: { setIsOpen: (open: boolean) => void }) {
+export function MobileMenu({ setIsOpen }: { setIsOpen: (open: boolean) => void }) {
     return (
-        <>
+        <div className="flex flex-col gap-3 px-4 py-2">
             {navbarList.map(({ title, href }) => (
                 <Link
                     key={href}
@@ -58,18 +60,28 @@ Navbar.MobileMenu = function MobileMenu({ setIsOpen }: { setIsOpen: (open: boole
                 >
                     <span className="flex items-center gap-1">
                         {title}
-                        {title === "E-Learning" && <ArrowUpRight color="white" size={14} />}
+                        {title === "E-Learning" && (
+                            <ArrowUpRight color="white" size={14} />
+                        )}
                     </span>
                 </Link>
             ))}
-            <div className="flex flex-col gap-2 justify-center items-center *:w-full text-center">
-                <Link href="/auth/login" className="py-1.5 px-3 border border-white rounded hover:bg-white hover:text-[#D10000] transition">
+            <div className="flex flex-col gap-2 text-center mt-2">
+                <Link
+                    href="/auth/login"
+                    className="py-1.5 px-3 border border-white rounded hover:bg-white hover:text-primary transition"
+                    onClick={() => setIsOpen(false)}
+                >
                     Masuk
                 </Link>
-                <Link href="/auth/sign-up" className="py-1.5 px-3 rounded bg-white text-[#D10000] hover:opacity-90 transition">
+                <Link
+                    href="/auth/sign-up"
+                    className="py-1.5 px-3 rounded bg-white text-primary hover:opacity-90 transition"
+                    onClick={() => setIsOpen(false)}
+                >
                     Daftar
                 </Link>
             </div>
-        </>
+        </div>
     );
-};
+}
