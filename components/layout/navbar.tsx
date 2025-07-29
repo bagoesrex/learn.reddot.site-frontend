@@ -7,8 +7,8 @@ import Link from "next/link";
 
 const navbarList: { title: string; href: string }[] = [
     { title: "Belajar", href: "/" },
-    { title: "Komunitas", href: "/news" },
-    { title: "Others", href: "/article" },
+    { title: "Komunitas", href: "/community" },
+    { title: "Others", href: "/other" },
     { title: "Tentang Kami", href: "/about" },
 ];
 
