@@ -21,6 +21,7 @@ export function SignUpForm({
   ...props
 }: React.ComponentPropsWithoutRef<"div">) {
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -39,15 +40,38 @@ export function SignUpForm({
       return;
     }
 
+    const { data: existing } = await supabase
+      .from("profiles")
+      .select("id")
+      .eq("username", username);
+
+    if (existing && existing.length > 0) {
+      setError("Username sudah digunakan");
+      setIsLoading(false);
+      return;
+    }
+
     try {
-      const { error } = await supabase.auth.signUp({
+      const { data, error: signUpError } = await supabase.auth.signUp({
         email,
         password,
         options: {
           emailRedirectTo: `${window.location.origin}/protected`,
         },
       });
-      if (error) throw error;
+      if (signUpError) throw signUpError;
+
+      const user = data.user;
+
+      if (user) {
+        const { error: updateError } = await supabase
+          .from("profiles")
+          .update({ username })
+          .eq("id", user.id);
+
+        if (updateError) throw updateError;
+      }
+
       router.push("/auth/sign-up-success");
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred");
@@ -66,6 +90,17 @@ export function SignUpForm({
         <CardContent>
           <form onSubmit={handleSignUp}>
             <div className="flex flex-col gap-6">
+              <div className="grid gap-2">
+                <Label htmlFor="username">Username</Label>
+                <Input
+                  id="username"
+                  required
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  placeholder="sikucinkjawa"
+                  className="focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:border-primary/40"
+                />
+              </div>
               <div className="grid gap-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
