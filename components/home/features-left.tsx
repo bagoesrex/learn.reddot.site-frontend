@@ -24,7 +24,7 @@ export default function FeaturesLeft() {
                         <FeatureCard title="Pelajari Atificial Intelligent" subtitle="Materi Up to Date" description="Pelajari perkembangan dan kemajuan AI dan bagaimana menggunakannya di kehidupan sehari hari" href="/" buttonText="Lihat Materi" />
                     </div>
                     <div className="w-[45%]">
-                        <FeatureCard title="Diskusi Sesama Pengguna" subtitle="Forum Diskusi" description="Jangan takut sendiri, gabung dengan pengguna yang lain dalam forum diskusi dan dapatkan insight baru" href="/" buttonText="Lihat Forum" />
+                        <FeatureCard title="Diskusi Sesama Pengguna" subtitle="Forum Diskusi" description="Jangan takut sendiri, gabung dengan pengguna yang lain dalam forum diskusi dan dapatkan insight baru" href="/forum" buttonText="Lihat Forum" />
                     </div>
                 </div>
             </div>
