@@ -52,7 +52,7 @@ export default function HeroSection() {
             </div>
 
             <motion.div
-                className="flex flex-col items-center w-[300px] md:w-[500px]"
+                className="flex flex-col items-center w-[300px] md:w-[400px]"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
@@ -63,7 +63,7 @@ export default function HeroSection() {
                         alt="Reddot Logo"
                         width={500}
                         height={300}
-                        className="w-full h-auto text-red-500"
+                        className="w-full h-auto text-red-500 rotate-5"
                         priority
                     />
                 </div>
