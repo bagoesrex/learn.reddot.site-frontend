@@ -1,16 +1,14 @@
-import { createClient } from "@/lib/supabase/server";
 import TopicCard from "./topic-card";
+import { getAllTopics } from "@/lib/api/topics/getAllTopics";
 
 export default async function TopicSection() {
-    const supabase = await createClient()
+    let topics = [];
 
-    const { data: topics, error } = await supabase
-        .from('topics')
-        .select('*')
-
-    if (error) {
-        console.error('Error fetching topics:', error.message)
-        return <div>Error loading forum</div>
+    try {
+        topics = await getAllTopics();
+    } catch (error: unknown) {
+        console.error("Failed to fetch topics:", error);
+        return <div className="mt-20">Error loading forum</div>;
     }
 
     return (
@@ -19,10 +17,19 @@ export default async function TopicSection() {
                 <h1 className="heading-main !text-2xl">Topics.</h1>
                 <h2 className="text-md">Jelajahi topic dan berkomunikasi langsung dengan user lain</h2>
 
-                {topics?.map(topic => (
-                    <TopicCard key={topic.id} id={topic.id} title={topic.title} content={topic.content} />
-                ))}
+                {topics.length === 0 ? (
+                    <p>Belum ada topik yang tersedia.</p>
+                ) : (
+                    topics.map(topic => (
+                        <TopicCard
+                            key={topic.id}
+                            id={topic.id}
+                            title={topic.title}
+                            content={topic.content}
+                        />
+                    ))
+                )}
             </div>
         </section>
-    )
+    );
 }
