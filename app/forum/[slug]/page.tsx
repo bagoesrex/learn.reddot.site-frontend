@@ -18,6 +18,7 @@ export default async function TopicPage({
             getTopicById(slug),
         ]);
     } catch (error: unknown) {
+        console.error("Failed to fetch topic:", error);
         return <div className="mt-20">Error loading topic</div>;
     }
 
