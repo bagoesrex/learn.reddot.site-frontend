@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import HeroSection from "@/components/dashboard/hero-section";
 import { getUser } from "@/lib/api/auth/getUser";
 import { getUsernameById } from "@/lib/api/profiles/getUsernameById";
+import CourseSection from "@/components/dashboard/course-section";
 
 export default async function DashboardPage() {
     const user = await getUser();
@@ -13,6 +14,7 @@ export default async function DashboardPage() {
     return (
         <main className="flex flex-col gap-10 text-gray-950">
             <HeroSection username={username} />
+            <CourseSection />
         </main>
     );
 }
