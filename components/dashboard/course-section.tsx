@@ -1,29 +1,22 @@
+import { getAllCourses } from "@/lib/api/courses/getAllCourses";
 import CourseCard from "./course-card"
 
-const lists = [
-    {
-        title: "Rookie Level 1",
-        description: "Ini Descriptioon",
-        image: "/dashboard/rookie.webp"
-    },
-    {
-        title: "Rookie Level 1",
-        description: "Ini Descriptioon",
-        image: "/dashboard/rookie.webp"
-    },
-    {
-        title: "Rookie Level 1",
-        description: "Ini Descriptioon",
-        image: "/dashboard/rookie.webp"
-    },
-]
+export default async function CourseSection() {
+    let courses = [];
 
-export default function CourseSection() {
+    try {
+        courses = await getAllCourses();
+        console.log(courses)
+    } catch (error: unknown) {
+        console.error("Failed to fetch courses:", error);
+        return <div className="mt-20">Error loading courses</div>;
+    }
+
     return (
         <section className="flex flex-col justify-center items-center gap-2 pb-15 w-full text-primary px-5">
-            <div className="max-w-5xl w-full columns-3 gap-3 justify-center items-center">
-                {lists.map((list, index) => (
-                    <CourseCard key={index} title={list.title} description={list.description} image={list.image} />
+            <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-3 gap-3 justify-center items-center">
+                {courses.map((course, index) => (
+                    <CourseCard key={index} title={course.title} description={course.description} image={course.thumbnail_url} />
                 ))}
             </div>
         </section>

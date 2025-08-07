@@ -7,7 +7,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ username = "User" }: HeroSectionProps) {
     return (
-        <section className="flex flex-col justify-center items-center gap-2 pb-15 pt-[60px] w-full text-background px-5">
+        <section className="flex flex-col justify-center items-center gap-2 pb-5 pt-[60px] w-full text-background px-5">
             <div className="flex flex-col justify-center items-start max-w-5xl rounded-xl bg-primary/85 min-h-25 w-full px-5 py-4 relative">
                 <h1 className="heading-main !text-2xl">Hai, {username}.</h1>
                 <div className="flex flex-row gap-2 items-center">
