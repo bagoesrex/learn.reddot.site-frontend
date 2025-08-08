@@ -5,18 +5,19 @@ import Image from "next/image"
 import { ChevronRight } from "lucide-react"
 
 interface CourseCardProps {
+    id: string
     title: string
     description: string
     image: string
 }
 
-export default function CourseCard({ title, description, image }: CourseCardProps) {
+export default function CourseCard({ id, title, description, image }: CourseCardProps) {
     return (
         <Card className="px-4 py-4 flex flex-col gap-2 w-full items-center justify-center rounded-md shadow-md bg-white/20 text-primary">
             <h2 className="font-bold">{title}</h2>
             <Image src={image} alt={"Course Image"} width={230} height={230} />
             <p>{description}</p>
-            <Link href="/dashboard">
+            <Link href={`courses/${id}`}>
                 <Button asChild className="text-sm">
                     <span>
                         Yuk Mulai Belajar
