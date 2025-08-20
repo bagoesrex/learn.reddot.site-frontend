@@ -9,7 +9,7 @@ interface ModuleCardProps {
     order_number: number
 }
 
-export default function CourseCard({ id, title, order_number }: ModuleCardProps) {
+export default function ModuleCard({ id, title, order_number }: ModuleCardProps) {
     return (
         <Card className="px-4 py-4 flex flex-row justify-between gap-2 w-full items-center rounded-md shadow-md bg-white/20 text-primary">
             <h2 className="font-bold">{title}</h2>
