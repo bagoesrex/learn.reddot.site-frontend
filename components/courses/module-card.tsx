@@ -14,7 +14,7 @@ export default function CourseCard({ id, title, order_number }: ModuleCardProps)
         <Card className="px-4 py-4 flex flex-row justify-between gap-2 w-full items-center rounded-md shadow-md bg-white/20 text-primary">
             <h2 className="font-bold">{title}</h2>
             <p>Order Number: {order_number}</p>
-            <Link href={`courses/module/${id}`}>
+            <Link href={`/courses/${id}/module/${id}`}>
                 <Button asChild className="text-sm">
                     <span>
                         <ChevronRight />
