@@ -1,7 +1,7 @@
 import HeroSection from "@/components/courses/hero-section";
 import ModuleSection from "@/components/courses/module-section";
 import { getCourseById } from "@/lib/api/courses/getCourseById";
-import { getModulesByCourseId } from "@/lib/api/modules/getModuleByCourseId";
+import { getModulesByCourseId } from "@/lib/api/modules/getModulesByCourseId";
 
 export default async function CourseDetailPage({
     params,
