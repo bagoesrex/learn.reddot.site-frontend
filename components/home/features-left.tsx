@@ -21,7 +21,7 @@ export default function FeaturesLeft() {
             <div className="relative z-10 rounded-3xl p-6 h-full mt-50">
                 <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
                     <div className="w-[45%]">
-                        <FeatureCard title="Pelajari Atificial Intelligent" subtitle="Materi Up to Date" description="Pelajari perkembangan dan kemajuan AI dan bagaimana menggunakannya di kehidupan sehari hari" href="/" buttonText="Lihat Materi" />
+                        <FeatureCard title="Pelajari Atificial Intelligent" subtitle="Materi Up to Date" description="Pelajari perkembangan dan kemajuan AI dan bagaimana menggunakannya di kehidupan sehari hari" href="/dashboard" buttonText="Lihat Materi" />
                     </div>
                     <div className="w-[45%]">
                         <FeatureCard title="Diskusi Sesama Pengguna" subtitle="Forum Diskusi" description="Jangan takut sendiri, gabung dengan pengguna yang lain dalam forum diskusi dan dapatkan insight baru" href="/forum" buttonText="Lihat Forum" />
