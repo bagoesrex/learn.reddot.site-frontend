@@ -25,9 +25,9 @@ export default function HeroSection({ username = "User" }: HeroSectionProps) {
                         </div>
                     </div>
                 </div>
-                <Image src={"/smile.webp"} alt={""} width={150} height={150} className="absolute border-1 rounded-2xl -bottom-10 right-10" />
-                <Image src={"/smile.webp"} alt={""} width={200} height={200} className="absolute border-1 rounded-2xl bottom-10 right-25" />
-                <Image src={"/smile.webp"} alt={""} width={150} height={150} className="absolute border-1 rounded-2xl -bottom-10 right-50" />
+                <Image src={"/smile.webp"} alt={""} width={150} height={150} className="absolute border-1 rounded-2xl -bottom-10 right-10 hidden md:block" />
+                <Image src={"/smile.webp"} alt={""} width={200} height={200} className="absolute border-1 rounded-2xl bottom-10 right-25 hidden md:block" />
+                <Image src={"/smile.webp"} alt={""} width={150} height={150} className="absolute border-1 rounded-2xl -bottom-10 right-50 hidden md:block" />
             </div>
         </section>
     )
