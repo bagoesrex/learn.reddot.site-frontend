@@ -1,10 +1,10 @@
 import { createClient } from "@/lib/supabase/client";
 
-type CreatePostInput = {
-    topicId: string;
-    content: string;
-    userId: string;
-};
+interface CreatePostInput {
+    topicId: string
+    content: string
+    userId: string
+}
 
 export async function createPost({ topicId, content, userId }: CreatePostInput) {
     const supabase = createClient();

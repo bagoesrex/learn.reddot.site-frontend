@@ -1,6 +1,10 @@
 import { createClient } from "@/lib/supabase/server";
 
-export async function getPostsByTopicId(topicId: string) {
+interface GetPostsByTopicIdInput {
+    topicId: string
+}
+
+export async function getPostsByTopicId({ topicId }: GetPostsByTopicIdInput) {
     const supabase = await createClient();
 
     const { data, error } = await supabase

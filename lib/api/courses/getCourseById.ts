@@ -1,6 +1,10 @@
 import { createClient } from "@/lib/supabase/server";
 
-export async function getCourseById(courseId: string) {
+interface GetCourseByIdInput {
+    courseId: string
+}
+
+export async function getCourseById({ courseId }: GetCourseByIdInput) {
     const supabase = await createClient();
 
     const { data, error } = await supabase

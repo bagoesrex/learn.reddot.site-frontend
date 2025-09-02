@@ -1,6 +1,10 @@
 import { createClient } from "@/lib/supabase/server";
 
-export async function getModuleById(moduleId: string) {
+interface GetModuleByIdInput {
+    moduleId: string
+}
+
+export async function getModuleById({ moduleId }: GetModuleByIdInput) {
     const supabase = await createClient();
 
     const { data, error } = await supabase
