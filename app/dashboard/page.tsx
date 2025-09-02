@@ -8,7 +8,7 @@ export default async function DashboardPage() {
     const user = await getUser();
     if (!user) redirect("/auth/login");
 
-    const username = await getUsernameById(user.id);
+    const username = await getUsernameById({ userId: user.id });
     if (!username) redirect("/auth/login");
 
     return (
