@@ -125,3 +125,26 @@
 .heading-main {
   @apply text-4xl md:text-5xl font-extrabold leading-tight;
 }
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9ca3af;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6b7280;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #9ca3af transparent;
+}
