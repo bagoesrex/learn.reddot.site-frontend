@@ -15,8 +15,8 @@ export default async function CourseModuleDetailPage({
 
     try {
         [lessons, moduleDetail] = await Promise.all([
-            getLessonsByModuleId(moduleId),
-            getModuleById(moduleId),
+            getLessonsByModuleId({ moduleId: moduleId }),
+            getModuleById({ moduleId: moduleId }),
         ]);
     } catch (error: unknown) {
         console.error("Failed to fetch topic:", error);
