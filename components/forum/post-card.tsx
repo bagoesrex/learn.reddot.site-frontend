@@ -3,11 +3,15 @@ import { Card } from "../ui/card"
 
 interface PostCardProps {
     content: string
+    postUserId: string
+    currentUserId: string
 }
 
-export default function PostCard({ content }: PostCardProps) {
+export default function PostCard({ content, postUserId, currentUserId }: PostCardProps) {
+    const isOwner = postUserId === currentUserId
+
     return (
-        <div className="w-full flex flex-row gap-2 items-center">
+        <div className={`w-full flex ${isOwner ? "flex-row" : "flex-row-reverse"} gap-2 items-center`}>
             <Card className="px-4 py-2 flex gap-2 w-full h-fit justify-center rounded-md shadow-none bg-white/20">
                 <p className="text-xs break-words">
                     {content}

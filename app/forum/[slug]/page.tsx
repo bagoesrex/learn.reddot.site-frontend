@@ -41,7 +41,7 @@ export default async function TopicPage({
                         <p>Belum ada posts yang tersedia.</p>
                     ) : (
                         posts.map((post) => (
-                            <PostCard key={post.id} content={post.content} />
+                            <PostCard key={post.id} content={post.content} postUserId={post.user_id} currentUserId={userId} />
                         ))
                     )}
                     <PostForm topicId={slug} userId={userId} />
